@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Primeiro SPA</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <br>
+        <div>
+            <input type="text" id="valor01" onkeyup="Soma()"/> 
+            <input type="text" id="valor02" onkeyup="Soma()"/>
+        </div>
+        <p>
+            Soma em tempo real:
+            <div id="result"></div>
+        </p>
+        
+        <hr >
+
+        <input type="button" onclick="EventoSoma()" value="Evento Soma JS">
+
+
+    </div>
+
+    
+
+    <script>   
+
+        function Soma(){
+            var a = document.getElementById("valor01").value;
+            var b = document.getElementById("valor02").value;
+            var result = parseInt(a) + parseInt(b); 
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+        function EventoSoma(){
+            var a = document.getElementById("valor01").value;
+            var b = document.getElementById("valor02").value;
+            var result = parseInt(a) + parseInt(b);
+            alert(result);
+        }
+
+
+    </script>
+
+</body>
+</html>

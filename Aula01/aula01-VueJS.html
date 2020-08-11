@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Primeiro SPA</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input type="text" v-model="variavel" /> 
+            <input type="text" v-model="variavel2"/>
+        </div>        
+        <p>
+            Soma Tempo Real:
+            <h4 v-if="variavel && variavel2">
+                {{parseInt(variavel) + parseInt(variavel2)}}
+            </h4>
+            <h4 v-else>
+                0
+            </h4>
+            
+        </p>   
+        
+        <hr>
+
+        <input type="button" v-on:click="EventoSoma" value="Soma ao clicar">
+        <br>
+        <h2>
+            {{ result }}
+        </h2>      
+        
+    </div>
+ 
+    
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                variavel: null,
+                variavel2: null,
+                result: null,                
+            },
+            methods: {
+                EventoSoma: function (events){       
+                    if (this.variavel == null || this.variavel2 == null)
+                        this.result = "Informe os valores";
+                    else                                
+                        this.result = parseInt(this.variavel) + parseInt(this.variavel2);                                        
+                }
+            }
+        })      
+    
+
+    </script>
+
+</body>
+</html>

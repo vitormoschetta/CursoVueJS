@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Primeiro SPA</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- bool -->
+
+    <div id="app-3">
+        <p v-if="seen">Agora você me viu</p>
+    </div>
+
+    <!-- for / laço-->
+    <div id="app-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Texto</td>    
+                </tr>       
+            </thead>
+            <tbody>
+                <tr v-for="item in lista">
+                    <td>{{item.id}}</td>
+                    <td>{{item.text}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    
+
+
+    <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+
+    <script>
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Olá Vue!'
+            }
+        })   
+
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: true
+            }
+        })
+
+
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                lista: [
+                    { id: 1, text: 'Aprender JavaScript' },
+                    { id: 2, text: 'Aprender Vue' },
+                    { id: 3, text: 'Criar algo incrível' }
+                ]
+            }
+        })
+    
+    </script>
+
+</body>
+</html>
